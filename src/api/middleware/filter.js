@@ -7,10 +7,11 @@ const filter = (ctx, next) => {
     const filterMap = filter.reduce((prev, curr) => Object.assign(prev, { [curr]: true }), {})
 
     ctx.state.Movies = ctx.state.Movies.filter((item) => {
-      let count = 0;
+      const array = item.genres || []
 
-      (item.genres || []).forEach(
-        (x) => count += (filterMap[x] ? 1 : 0)
+      let count = array.reduce(
+        (prev, curr) => prev + (filterMap[curr] ? 1 : 0),
+        0
       )
 
       return count >= filterLength
