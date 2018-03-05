@@ -6,7 +6,7 @@ const fs = require('fs')
 const { restoreMovieStructure, presentJSONData } = require('./utils/presenters')
 
 const sleep = (ms = 0) => {
-  return new Promise(r => setTimeout(r, ms))
+  return new Promise(resolve => setTimeout(resolve, ms))
 }
 
 const getMovieByID = async ({ id }) => {
