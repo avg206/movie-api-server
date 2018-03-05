@@ -1,8 +1,9 @@
 # JS Project Template [![Build Status](https://travis-ci.org/avg206/js-project-template.svg?branch=master)](https://travis-ci.org/avg206/js-project-template)
 
-This repository is a template for JS projects.
+This repository is a template for JS projects. [Themes of final projects](https://github.com/it-shark-pro/web-school-lectures/blob/master/docs/final_projects.md).
 
-[Themes of final projects](https://github.com/it-shark-pro/web-school-lectures/blob/master/docs/final_projects.md)
+Once your project is done, you can notify us [here](https://docs.google.com/forms/d/e/1FAIpQLSd5inoVWvIojvtP3GJDmGVXQvty905qLk7i3XCTKz5SFG_OBw/viewform).
+
 
 ## Get started ##
 
