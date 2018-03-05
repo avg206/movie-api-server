@@ -1,5 +1,5 @@
 {
-  "name": "api-server",
+  "name": "movie-api-server",
   "version": "0.1.0",
   "description": "Movie API Server",
   "main": "src/index.js",
