@@ -2,6 +2,8 @@
 
 This repository is a template for JS projects.
 
+[Themes of final projects](https://github.com/it-shark-pro/web-school-lectures/blob/master/docs/final_projects.md)
+
 ## Get started ##
 
 ### Install all dependencies
