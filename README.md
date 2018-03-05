@@ -1,4 +1,4 @@
-# README #
+# JS Project Template [![Build Status](https://travis-ci.org/avg206/js-project-template.svg?branch=master)](https://travis-ci.org/avg206/js-project-template)
 
 This repository is a template for JS projects.
 
