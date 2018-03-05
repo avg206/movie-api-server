@@ -4,8 +4,8 @@ const sort = (ctx, next) => {
 
   if (sortBy && sortOrder) {
     ctx.state.Movies = ctx.state.Movies.sort((a, b) => {
-      let aField = a[sortBy] || ''
-      let bField = b[sortBy] || ''
+      let aField = a[sortBy]
+      let bField = b[sortBy]
 
       if (sortOrder === 'desc') {
         let tmp = aField
@@ -15,9 +15,13 @@ const sort = (ctx, next) => {
 
       if (typeof aField === 'string') {
         return aField.localeCompare(bField)
-      } else if (typeof aField === 'number') {
+      }
+
+      if (typeof aField === 'number') {
         return aField - bField
       }
+
+      return 0
     })
   }
 
