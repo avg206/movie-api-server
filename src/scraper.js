@@ -3,7 +3,7 @@ const API_KEY = process.env.API_KEY
 const axios = require('axios')
 const fs = require('fs')
 
-const { presentMovie, presentJSONData } = require('./utils/presenters')
+const { restoreMovieStructure, presentJSONData } = require('./utils/presenters')
 
 const sleep = (ms = 0) => {
   return new Promise(r => setTimeout(r, ms))
@@ -16,7 +16,7 @@ const getMovieByID = async ({ id }) => {
   console.log('Sleep for 100 ms')
   await sleep(100)
 
-  return presentMovie(data)
+  return restoreMovieStructure(data)
 }
 
 const getMoviesByPage = async (page) => {

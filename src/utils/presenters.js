@@ -1,16 +1,48 @@
+const pick = require('lodash/pick')
+
+// HELPERS
+// =============================================
+
 const IMAGE_URL = 'https://image.tmdb.org/t/p/w500'
 
 const addImageHostname = (uri) => {
   return `${IMAGE_URL}${uri}`
 }
 
+const goodFields = [
+  'id',
+  'title',
+  'tagline',
+  'vote_average',
+  'vote_count',
+  'release_date',
+  'poster_path',
+  'overview',
+  'budget',
+  'revenue',
+  'genres',
+]
+
+// Functions
+// =============================================
+
+// Present movie to have only allowed fields
+const presentMovie = (movie) => {
+  return pick(movie, goodFields)
+}
+
+// Map all movies with present function
+const presentMovies = (movies, presentor = presentMovie) => {
+  return movies.map((item) => presentor(item))
+}
+
 // Present data to readable JSON
-exports.presentJSONData = (data) => {
+const presentJSONData = (data) => {
   return JSON.stringify(data, null, 2)
 }
 
 // Present Movie data structure
-exports.presentMovie = (data) => {
+const restoreMovieStructure = (data) => {
   return {
     ...data,
     backdrop_path: data.backdrop_path && addImageHostname(data.backdrop_path),
@@ -22,4 +54,11 @@ exports.presentMovie = (data) => {
     },
     genres: data.genres && data.genres.map(x => x.name),
   }
+}
+
+module.exports = {
+  presentJSONData,
+  presentMovie,
+  presentMovies,
+  restoreMovieStructure,
 }

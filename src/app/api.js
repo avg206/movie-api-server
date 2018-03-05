@@ -1,6 +1,6 @@
 const KoaRouter = require('koa-router')
 
-const { presentMovie, presentMovies } = require('./presentors')
+const { presentMovie, presentMovies } = require('../utils/presenters')
 
 const api = KoaRouter()
 
