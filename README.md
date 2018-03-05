@@ -2,6 +2,10 @@
 
 Simple API Server and scraper for themoviedb
 
+API endpoint: [https://peaceful-temple-32270.herokuapp.com](https://peaceful-temple-32270.herokuapp.com)
+
+Find more info in `api.yml`
+
 ## Get started ##
 
 ### Install all dependencies
