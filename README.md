@@ -21,3 +21,15 @@ npm run test
 ```bash
 npm run lint
 ```
+
+## How to setup travis-ci
+* Open [https://travis-ci.org/](https://travis-ci.org/) and sign in with your github account.
+* Activate your forked repo **js-project-template**.
+* Edit local README.md file and update all links (just replace all occurrences of `'js-project-template'` with your account name).
+* Commit and push updated README.md to github:
+```bash
+  git add README.md
+  git commit -m "(change) travic ci setup"
+  git push origin master
+```
+* Open your repository and test the build icon. Now it will run all tests and update status once you push changes to github. Keep this icon green!
