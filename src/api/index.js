@@ -5,6 +5,7 @@ const { presentMovie, presentMovies } = require('../utils/presenters')
 const searchMiddleware = require('./middleware/search')
 const filterMiddleware = require('./middleware/filter')
 const sortMiddleware = require('./middleware/sort')
+const paginationMiddleware = require('./middleware/pagination')
 
 const apiSpec = fs.readFileSync(`${__dirname}/../../api.json`)
 
@@ -20,6 +21,7 @@ api.get('/movies',
   searchMiddleware,
   filterMiddleware,
   sortMiddleware,
+  paginationMiddleware,
   // Return movies
   async (ctx, next) => {
     ctx.status = 200
