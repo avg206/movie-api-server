@@ -1,13 +1,9 @@
 
 const pagination = (ctx, next) => {
-  const { offset = 0, limit = 10 } = ctx.query
+  const { offset, limit } = ctx.query
 
-  const from = parseInt(offset, 10)
-  const to = parseInt(offset, 10) + parseInt(limit, 10)
-
-  console.log(from, to)
-
-  ctx.state.Movies = ctx.state.Movies.slice(from, to)
+  ctx.state.totalAmount = ctx.state.Movies.length
+  ctx.state.Movies = ctx.state.Movies.slice(offset, offset + limit)
 
   next()
 }
