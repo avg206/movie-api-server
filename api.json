@@ -89,10 +89,7 @@
           "200": {
             "description": "Movies list",
             "schema": {
-              "type": "array",
-              "items": {
-                "$ref": "#/definitions/Movie"
-              }
+              "$ref": "#/definitions/MoviesResponse"
             },
             "examples": {}
           }
@@ -132,6 +129,27 @@
     }
   },
   "definitions": {
+    "MoviesResponse": {
+      "title": "MoviesResponse",
+      "type": "object",
+      "properties": {
+        "data": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Movie"
+          }
+        },
+        "total": {
+          "type": "number"
+        },
+        "offset": {
+          "type": "number"
+        },
+        "limit": {
+          "type": "number"
+        }
+      }
+    },
     "Movie": {
       "title": "Movie",
       "type": "object",
