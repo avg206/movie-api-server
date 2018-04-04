@@ -26,14 +26,6 @@ describe('Middleware :: Pagination', () => {
     expect(next).toHaveBeenCalledTimes(1)
   })
 
-  it('should paginate with default values', () => {
-    const next = jest.fn()
-
-    pagination(defaultCtx, next)
-
-    expect(defaultCtx.state.Movies).toEqual([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
-  })
-
   it('should paginate with given values', () => {
     const next = jest.fn()
     defaultCtx.query.offset = 5
