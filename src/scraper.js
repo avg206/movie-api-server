@@ -17,7 +17,7 @@ const getMovieByID = async ({ id }) => {
   console.log(`Download movie ID: ${id} `)
   const { data } = await axios.get(`https://api.themoviedb.org/3/movie/${id}?api_key=${API_KEY}`)
 
-  await sleep(100)
+  await sleep(50)
 
   return restoreMovieStructure(data)
 }
