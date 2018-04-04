@@ -67,6 +67,22 @@
               }
             },
             "description": "Array to filter by genres"
+          },
+          {
+            "in": "query",
+            "name": "offset",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Offset in result array for pagination"
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Limit amount of items in result array for pagination"
           }
         ],
         "responses": {
