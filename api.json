@@ -9,7 +9,7 @@
       "url": "http://github.com/gruntjs/grunt/blob/master/LICENSE-MIT"
     }
   },
-  "host": "localhost:4000",
+  "host": "react-cdp-api.herokuapp.com",
   "basePath": "/",
   "schemes": [
     "http"
