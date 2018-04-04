@@ -32,8 +32,15 @@ const presentMovie = (movie) => {
 }
 
 // Map all movies with present function
-const presentMovies = (movies, presentor = presentMovie) => {
-  return movies.map((item) => presentor(item))
+const presentMovies = (ctx, presentor = presentMovie) => {
+  const { state: { Movies, totalAmount }, query: { offset, limit } } = ctx
+
+  return {
+    data: Movies.map((item) => presentor(item)),
+    total: totalAmount,
+    offset,
+    limit,
+  }
 }
 
 // Present data to readable JSON

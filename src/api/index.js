@@ -25,7 +25,7 @@ api.get('/movies',
   // Return movies
   async (ctx, next) => {
     ctx.status = 200
-    ctx.body = presentMovies(ctx.state.Movies)
+    ctx.body = presentMovies(ctx)
   })
 
 api.get('/movies/:id',
