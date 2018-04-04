@@ -1,3 +1,4 @@
+const fs = require('fs')
 const KoaRouter = require('koa-router')
 
 const { presentMovie, presentMovies } = require('../utils/presenters')
@@ -5,7 +6,15 @@ const searchMiddleware = require('./middleware/search')
 const filterMiddleware = require('./middleware/filter')
 const sortMiddleware = require('./middleware/sort')
 
+const apiSpec = fs.readFileSync(`${__dirname}/../../api.json`)
+
 const api = KoaRouter()
+
+api.get('/api.json',
+  (ctx, next) => {
+    ctx.status = 200
+    ctx.body = apiSpec.toString()
+  })
 
 api.get('/movies',
   searchMiddleware,
