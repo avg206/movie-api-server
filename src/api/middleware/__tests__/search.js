@@ -48,9 +48,9 @@ describe('Middleware :: Search', () => {
         { genres: ['aaa', 'bbb'] },
         { genres: ['ccc', 'ooo', 'fff'] },
       ]
-  
+
       search(defaultCtx, next)
-  
+
       expect(defaultCtx.state.Movies).toEqual([
         { genres: ['ccc', 'ooo', 'fff'] },
       ])
@@ -64,13 +64,11 @@ describe('Middleware :: Search', () => {
         { genres: ['aaa', 'bbb'] },
         { genres: ['ccc', 'ooo', 'fff'] },
       ]
-  
+
       search(defaultCtx, next)
-  
+
       expect(defaultCtx.state.Movies).toEqual([
       ])
     })
   })
-
-
 })

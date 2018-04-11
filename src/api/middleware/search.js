@@ -9,14 +9,13 @@ const search = (ctx, next) => {
           (item) => item.title.indexOf(search) !== -1
         )
         break
-      
+
       case 'genres':
         ctx.state.Movies = ctx.state.Movies.filter(
           (item) => item.genres.some(x => x.includes(search))
         )
         break
     }
-    
   }
 
   next()
