@@ -55,7 +55,14 @@
             "schema": {
               "type": "string"
             },
-            "description": "String to search by title"
+            "description": "Search value"
+          },
+          {
+            "in": "query",
+            "name": "searchBy",
+            "type": "strgin",
+            "enum": ["title", "genres"],
+            "description": "Type of search (title or genres)"
           },
           {
             "in": "query",
