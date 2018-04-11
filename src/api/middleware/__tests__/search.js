@@ -27,9 +27,10 @@ describe('Middleware :: Search', () => {
     expect(next).toHaveBeenCalledTimes(1)
   })
 
-  it('should search to specific item', () => {
+  it('should search to specific item by title', () => {
     const next = jest.fn()
     defaultCtx.query.search = 'ooo'
+    defaultCtx.query.searchBy = 'title'
 
     search(defaultCtx, next)
 
@@ -37,4 +38,39 @@ describe('Middleware :: Search', () => {
       { title: '123ooo123' },
     ])
   })
+
+  describe('should search to specific item by genres', () => {
+    it('#1', () => {
+      const next = jest.fn()
+      defaultCtx.query.search = 'ooo'
+      defaultCtx.query.searchBy = 'genres'
+      defaultCtx.state.Movies = [
+        { genres: ['aaa', 'bbb'] },
+        { genres: ['ccc', 'ooo', 'fff'] },
+      ]
+  
+      search(defaultCtx, next)
+  
+      expect(defaultCtx.state.Movies).toEqual([
+        { genres: ['ccc', 'ooo', 'fff'] },
+      ])
+    })
+
+    it('#2', () => {
+      const next = jest.fn()
+      defaultCtx.query.search = 'rrr'
+      defaultCtx.query.searchBy = 'genres'
+      defaultCtx.state.Movies = [
+        { genres: ['aaa', 'bbb'] },
+        { genres: ['ccc', 'ooo', 'fff'] },
+      ]
+  
+      search(defaultCtx, next)
+  
+      expect(defaultCtx.state.Movies).toEqual([
+      ])
+    })
+  })
+
+
 })
