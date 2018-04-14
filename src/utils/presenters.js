@@ -21,6 +21,7 @@ const goodFields = [
   'budget',
   'revenue',
   'genres',
+  'runtime',
 ]
 
 // Functions

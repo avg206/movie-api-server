@@ -194,6 +194,10 @@
         "revenue": {
           "type": "number"
         },
+        "runtime": {
+          "type": "number",
+          "description": "Movie duration"
+        },
         "genres": {
           "type": "array",
           "items": {
