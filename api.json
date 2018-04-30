@@ -47,7 +47,7 @@
             "schema": {
               "type": "string"
             },
-            "description": "Value to define sort direction - 'decs' or 'asc'"
+            "description": "Value to define sort direction - 'desc' or 'asc'"
           },
           {
             "in": "query",
