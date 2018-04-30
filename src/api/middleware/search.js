@@ -6,7 +6,7 @@ const search = (ctx, next) => {
     switch (searchBy) {
       case 'title':
         ctx.state.Movies = ctx.state.Movies.filter(
-          (item) => item.title.indexOf(search) !== -1
+          (item) => (new RegExp(search, 'i')).test(item.title)
         )
         break
 
