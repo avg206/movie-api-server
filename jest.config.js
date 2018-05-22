@@ -6,5 +6,7 @@ module.exports = {
     '!jest.config.js',
     '!**/node_modules/**',
     '!coverage/**',
+    '!src/index.js',
+    '!src/scraper.js',
   ],
 }

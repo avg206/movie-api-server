@@ -42,17 +42,17 @@ describe('Middleware :: Search', () => {
   describe('should search to specific item by genres', () => {
     it('#1', () => {
       const next = jest.fn()
-      defaultCtx.query.search = 'ooo'
+      defaultCtx.query.search = 'Ooo'
       defaultCtx.query.searchBy = 'genres'
       defaultCtx.state.Movies = [
         { genres: ['aaa', 'bbb'] },
-        { genres: ['ccc', 'ooo', 'fff'] },
+        { genres: ['ccc', 'Ooo', 'fff'] },
       ]
 
       search(defaultCtx, next)
 
       expect(defaultCtx.state.Movies).toEqual([
-        { genres: ['ccc', 'ooo', 'fff'] },
+        { genres: ['ccc', 'Ooo', 'fff'] },
       ])
     })
 
