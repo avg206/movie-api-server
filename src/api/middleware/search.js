@@ -11,8 +11,9 @@ const search = (ctx, next) => {
         break
 
       case 'genres':
+        const query = `${search[0].toUpperCase()}${search.substr(1)}`
         ctx.state.Movies = ctx.state.Movies.filter(
-          (item) => item.genres.some(x => x.includes(search))
+          (item) => item.genres.some(x => x.includes(query))
         )
         break
     }
